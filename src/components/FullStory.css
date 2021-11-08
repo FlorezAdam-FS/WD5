@@ -1,0 +1,45 @@
+.fullStoryImage {
+  width: 100%;
+  max-width: 800px;
+  height: 500px;
+  object-fit: cover;
+  margin-top: 1rem;
+}
+
+.fullStoryTitle {
+  font-size: 2.4rem;
+}
+
+.fullStorySummary {
+  font-size: 1.3rem;
+  text-align: left;
+}
+
+.fullStoryLink {
+  font-size: 1.3rem;
+  background-color: rgb(240, 98, 98);
+  color: white;
+  padding: 0.3rem 1rem 0.5rem;
+  border-radius: 0.3rem;
+  text-decoration: none;
+}
+
+.fullStoryLink:hover {
+  background-color: rgb(216, 78, 78);
+}
+
+.right {
+  float: right;
+  padding: 0 2rem 2rem 0;
+}
+
+@media (max-width: 800px) {
+  .fullStoryImage {
+    width: 100%;
+  }
+
+  .fullStoryTitle,
+  .fullStorySummary {
+    padding: 0 2rem;
+  }
+}
