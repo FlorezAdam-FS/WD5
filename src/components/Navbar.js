@@ -1,9 +1,9 @@
 import { BiSearch } from 'react-icons/bi';
 import React, { useState } from 'react';
 import './Navbar.css';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
-function Navbar({ cb, path }) {
+function Navbar({ cb }) {
   const [searchValue, setSearchValue] = useState('');
 
   async function updateData(search) {
@@ -12,7 +12,6 @@ function Navbar({ cb, path }) {
       `
     );
     const data = await response.json();
-    console.log(data);
 
     cb(data.articles);
   }
@@ -23,11 +22,13 @@ function Navbar({ cb, path }) {
     updateData(search.value);
   }
 
+  let location = useLocation();
+
   return (
     <div className='navBar'>
-      <a href='/'>
+      <Link to='/'>
         <h1 className='techNewsie'>TechNewsie</h1>
-      </a>
+      </Link>
       <Link className='storiesLink' to='/'>
         Stories
       </Link>
@@ -43,6 +44,42 @@ function Navbar({ cb, path }) {
           <BiSearch />
         </button>
       </form>
+      <style jsx='true'>{`
+        form {
+          transform: ${location.pathname === '/fullstory'
+            ? 'translateX(1000%)'
+            : 'translateX(0)'};
+          opacity: ${location.pathname === '/fullstory' ? '0' : '1'};
+          transition: all 300ms ease-out;
+        }
+        .storiesLink {
+          transform: ${location.pathname === '/fullstory'
+            ? 'translateX(382px)'
+            : 'translateX(0)'};
+          transition: 300ms ease-out;
+        }
+        @media (max-width: 800px) {
+          form {
+            transform: ${location.pathname === '/fullstory'
+              ? 'translateX(200%)'
+              : 'translateX(0)'};
+            opacity: ${location.pathname === '/fullstory' ? '0' : '1'};
+            transition: all 300ms ease-out;
+          }
+          .storiesLink {
+            transform: ${location.pathname === '/fullstory'
+              ? 'translateX(0)'
+              : 'translateX(0)'};
+            transition: all 300ms ease-out;
+          }
+          .navBar {
+            padding-bottom: ${location.pathname === '/fullstory'
+              ? '0'
+              : '1rem'};
+            transition: all 300ms ease-in-out;
+          }
+        }
+      `}</style>
     </div>
   );
 }
