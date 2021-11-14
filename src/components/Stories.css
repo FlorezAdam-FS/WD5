@@ -1,0 +1,138 @@
+h3 {
+  font-family: 'Zen Antique', serif;
+  font-size: 2.4rem;
+  line-height: 1.1;
+  margin-bottom: 3rem;
+}
+
+article {
+  display: flex;
+  margin: 2rem 0;
+  border: 4px solid #222;
+  transition: all 300ms ease-out;
+  position: relative;
+}
+
+span {
+  position: absolute;
+  top: 0rem;
+  font-size: 0.8rem;
+  background: #222;
+  padding: 0.2rem;
+  color: white;
+  right: 0rem;
+}
+
+h4 {
+  font-family: 'Zen Antique', serif;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+article:hover {
+  background: #222;
+  transform: scale(1.02);
+}
+
+article:hover > div > h3,
+article:hover > div > p {
+  color: white;
+}
+
+article:hover > div > .link {
+  color: white;
+  background: #222;
+  border: 3px solid white;
+}
+
+.text {
+  padding: 0 2rem;
+  text-align: left;
+  position: relative;
+  font-family: 'Rubik';
+  font-size: 1.1rem;
+}
+
+img {
+  object-fit: cover;
+}
+
+.summary {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  margin-bottom: 3rem;
+}
+
+.centeredText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.centeredImg {
+  background: url('../images/search.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 500px;
+  max-width: 500px;
+}
+
+.link {
+  color: #222;
+}
+
+@media (max-width: 800px) {
+  article,
+  article:nth-child(even) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5rem 0;
+  }
+
+  .text,
+  article:nth-child(even) .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+  }
+
+  .link,
+  article:nth-child(odd) .link {
+    position: relative;
+    width: 100%;
+    right: 0;
+  }
+
+  span {
+    right: 0;
+    top: 0;
+  }
+
+  img {
+    width: 100%;
+  }
+  .centeredText {
+    top: 60%;
+  }
+  .centeredImg {
+    width: 300px;
+    height: 300px;
+  }
+
+  h4 {
+    font-size: 1.3rem;
+  }
+}
