@@ -23,13 +23,14 @@ function Stories({ setArticle, searchedArticles }) {
           <div className='articles'>
             {searchedArticles.map((article, index) => (
               <Link
+                key={index}
                 className='link'
                 to='/fullstory'
                 onClick={(e) => {
                   setArticle(article);
                 }}
               >
-                <article key={index}>
+                <article>
                   <img src={article.urlToImage} alt='article' width={400} />
                   <div className='text'>
                     <span>
