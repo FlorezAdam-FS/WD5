@@ -32,6 +32,7 @@
 
 .fullStoryLink {
   background-color: rgb(240, 98, 98);
+  margin-right: 1rem;
 }
 
 .fullStoryLink:hover {
@@ -47,14 +48,10 @@
 }
 
 .right {
-  float: right;
-  padding: 0 0rem 2rem 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  max-width: 300px;
-  width: 100%;
-  box-sizing: border-box;
+  justify-content: flex-start;
+  margin: 0;
 }
 
 .right div {
@@ -72,6 +69,6 @@
   }
 
   .right {
-    padding-right: 2rem;
+    padding-left: 2rem;
   }
 }

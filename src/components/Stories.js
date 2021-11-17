@@ -31,11 +31,11 @@ function Stories({ setArticle, searchedArticles }) {
                 }}
               >
                 <article>
-                  <img src={article.urlToImage} alt='article' width={400} />
+                  <img src={article.media} alt='article' width={400} />
                   <div className='text'>
                     <span>
                       {'published on: ' +
-                        article.publishedAt.split('T').slice(0, 1)}
+                        article.published_date.split('T').slice(0, 1)}
                     </span>
                     <h3>{article.title}</h3>
                   </div>

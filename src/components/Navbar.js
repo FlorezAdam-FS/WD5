@@ -8,11 +8,18 @@ function Navbar({ cb }) {
 
   async function updateData(search) {
     const response = await fetch(
-      `https://newsapi.org/v2/everything?q=${search}&apiKey=85062f74bccf4b33872bf17c11caaae6
-      `
+      `https://free-news.p.rapidapi.com/v1/search?q=${search}%20Musk&lang=en`,
+      {
+        method: 'GET',
+        headers: {
+          'x-rapidapi-host': 'free-news.p.rapidapi.com',
+          'x-rapidapi-key':
+            '99904098f4msh9256c1370a1059dp15ba00jsn7a23af031e17',
+        },
+      }
     );
     const data = await response.json();
-
+    console.log(data);
     cb(data.articles);
   }
 
