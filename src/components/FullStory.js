@@ -23,7 +23,7 @@ function FullStory({ article }) {
         <div>
           <p>Share it:</p>
           <a
-            class='twitter-share-button'
+            className='twitter-share-button'
             href={`https://twitter.com/intent/tweet?text=${
               article.title
             }&hashtags=${article.topic}&url=${

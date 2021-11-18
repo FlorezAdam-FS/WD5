@@ -8,7 +8,7 @@ function Navbar({ cb }) {
 
   async function updateData(search) {
     const response = await fetch(
-      `https://free-news.p.rapidapi.com/v1/search?q=${search}%20Musk&lang=en`,
+      `https://free-news.p.rapidapi.com/v1/search?q=${search}&lang=en`,
       {
         method: 'GET',
         headers: {
